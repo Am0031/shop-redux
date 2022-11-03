@@ -70,7 +70,11 @@ const reducers = (state = initialState, action) => {
         cart: newState,
       };
     case CLEAR_CART:
-      return {};
+      return {
+        ...state,
+        cartOpen: false,
+        cart: [],
+      };
     case TOGGLE_CART:
       return {};
     default:
