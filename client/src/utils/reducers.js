@@ -18,7 +18,7 @@ const initialState = {
   cartOpen: false,
 };
 
-const reducers = () => {
+const reducers = (state = initialState, action) => {
   //add all reducer cases with switch/case syntax
   //depends on initial state/state and actions
 };
