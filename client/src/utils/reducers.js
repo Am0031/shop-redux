@@ -10,6 +10,14 @@ import {
   TOGGLE_CART,
 } from "./actions";
 
+const initialState = {
+  products: [],
+  categories: [],
+  currentCategory: "",
+  cart: [],
+  cartOpen: false,
+};
+
 const reducers = () => {
   //add all reducer cases with switch/case syntax
   //depends on initial state/state and actions
