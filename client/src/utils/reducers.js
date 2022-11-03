@@ -23,7 +23,11 @@ const reducers = (state = initialState, action) => {
   //add all reducer cases with switch/case syntax
   switch (action.type) {
     case ADD_TO_CART:
-      return {};
+      return {
+        ...state,
+        cartOpen: true,
+        cart: [...state.cart, action.product],
+      };
     case ADD_MULTIPLE_TO_CART:
       return {};
     case UPDATE_CART_QUANTITY:
@@ -43,7 +47,6 @@ const reducers = (state = initialState, action) => {
     default:
       return state;
   }
-  //depends on initial state/state and actions
 };
 
 export default reducers;
