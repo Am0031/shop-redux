@@ -34,7 +34,16 @@ const reducers = (state = initialState, action) => {
         cart: [...state.cart, ...action.products],
       };
     case UPDATE_CART_QUANTITY:
-      return {};
+      return {
+        ...state,
+        cartOpen: true,
+        cart: state.cart.map((product) => {
+          if (action._id === product._id) {
+            product.purchaseQuantity = action.purchaseQuantity;
+          }
+          return product;
+        }),
+      };
     case UPDATE_CATEGORIES:
       return {};
     case UPDATE_CURRENT_CATEGORY:
