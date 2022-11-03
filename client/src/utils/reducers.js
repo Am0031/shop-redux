@@ -45,7 +45,10 @@ const reducers = (state = initialState, action) => {
         }),
       };
     case UPDATE_CATEGORIES:
-      return {};
+      return {
+        ...state,
+        categories: [...action.categories],
+      };
     case UPDATE_CURRENT_CATEGORY:
       return {};
     case UPDATE_PRODUCTS:
