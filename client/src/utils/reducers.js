@@ -60,7 +60,15 @@ const reducers = (state = initialState, action) => {
         products: [...action.products],
       };
     case REMOVE_FROM_CART:
-      return {};
+      let newState = state.cart.filter((product) => {
+        return product._id !== action._id;
+      });
+
+      return {
+        ...state,
+        cartOpen: newState.length > 0,
+        cart: newState,
+      };
     case CLEAR_CART:
       return {};
     case TOGGLE_CART:
