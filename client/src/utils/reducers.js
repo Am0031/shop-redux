@@ -55,7 +55,10 @@ const reducers = (state = initialState, action) => {
         currentCategory: action.currentCategory,
       };
     case UPDATE_PRODUCTS:
-      return {};
+      return {
+        ...state,
+        products: [...action.products],
+      };
     case REMOVE_FROM_CART:
       return {};
     case CLEAR_CART:
