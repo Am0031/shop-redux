@@ -18,7 +18,7 @@ const initialState = {
   cartOpen: false,
 };
 
-//depends on initial state/state and actions
+//reducer function - arguments: initial state/state and actions
 const reducers = (state = initialState, action) => {
   //add all reducer cases with switch/case syntax
   switch (action.type) {
