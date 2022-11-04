@@ -1,44 +1,44 @@
-const express = require("express");
-const path = require("path");
-const { ApolloServer } = require("apollo-server-express");
+// const express = require("express");
+// const path = require("path");
+const { ApolloServer } = require("apollo-server");
 const typeDefs = require("./typeDefs");
 const resolvers = require("./resolvers");
-const db = require("./config/connection");
+const connectToDatabase = require("./config/connection");
 const { authMiddleware } = require("./utils/auth");
 
 const PORT = process.env.PORT || 3001;
-const app = express();
-
-//creating apollo server
-const server = new ApolloServer({
-  typeDefs,
-  resolvers,
-  context: authMiddleware,
-});
+// const app = express();
 
 //express is called as middleware of apollo server
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+// app.use(express.urlencoded({ extended: true }));
+// app.use(express.json());
 
 // if we're in production, serve client/build as static assets
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "../client/build")));
-}
+// if (process.env.NODE_ENV === "production") {
+//   app.use(express.static(path.join(__dirname, "../client/build")));
+// }
 
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../client/"));
-});
+// app.get("/", (req, res) => {
+//   res.sendFile(path.join(__dirname, "../client/"));
+// });
 
-//making express middleware for apollo server
-const startServer = async (typeDefs, resolvers) => {
-  await server.start();
-  server.applyMiddleware({ app });
+const startServer = async () => {
+  try {
+    await connectToDatabase();
 
-  db.once("open", () => {
-    app.listen(PORT, () =>
-      console.log(`🌍 Now listening on localhost:${PORT}`)
-    );
-  });
+    // create a graphQL server
+    const server = new ApolloServer({
+      typeDefs,
+      resolvers,
+      context: authMiddleware,
+    });
+
+    const { url } = await server.listen(PORT);
+
+    console.log(`Server running on ${url}`);
+  } catch (error) {
+    console.log(`[ERROR]: Failed to start server | ${error.message}`);
+  }
 };
 
-startServer(typeDefs, resolvers);
+startServer();
