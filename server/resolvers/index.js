@@ -6,13 +6,19 @@ const { getCategories } = require("./categories");
 const { getOrder, checkout } = require("./orders");
 
 const resolvers = {
-  Query: { getUser, getProduct, getProducts, getCategories, getOrder },
+  Query: {
+    checkout,
+    getUser,
+    getProduct,
+    getProducts,
+    getCategories,
+    getOrder,
+  },
   Mutation: {
     login,
     addUser,
     updateUser,
     updateProduct,
-    checkout,
   },
 };
 
