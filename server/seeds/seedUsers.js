@@ -1,6 +1,7 @@
-const { User } = require("../models");
+const { User, Product } = require("../models");
 
 const seedUsers = async () => {
+  const products = await Product.find();
   await User.create({
     firstName: "Pamela",
     lastName: "Washington",

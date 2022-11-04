@@ -1,3 +1,11 @@
+const categories = [
+  { name: "Food" },
+  { name: "Household Supplies" },
+  { name: "Electronics" },
+  { name: "Books" },
+  { name: "Toys" },
+];
+
 const products = [
   {
     name: "Tin of Cookies",
