@@ -1,6 +1,6 @@
 const { Schema, model } = require("mongoose");
 const bcrypt = require("bcrypt");
-const Order = require("./Order");
+const orderSchema = require("./Order");
 
 const userSchema = {
   firstName: {
@@ -24,7 +24,7 @@ const userSchema = {
     required: true,
     minlength: 5,
   },
-  orders: [Order.schema],
+  orders: [orderSchema],
 };
 
 const schema = new Schema(userSchema, { toJSON: { virtuals: true } });
