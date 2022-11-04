@@ -3,7 +3,8 @@ const products = [
     name: "Tin of Cookies",
     description:
       "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
-    image: "cookie-tin.jpg",
+    image:
+      "https://images.unsplash.com/photo-1533745853815-26112482176d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80", //"cookie-tin.jpg"
     category: categories[0]._id,
     price: 2.99,
     quantity: 500,
