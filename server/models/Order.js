@@ -13,9 +13,7 @@ const orderSchema = {
   ],
 };
 
-const schema = new Schema(orderSchema, {
-  _id: false,
-});
+const schema = new Schema(orderSchema);
 
 const Order = model("Order", schema);
 
