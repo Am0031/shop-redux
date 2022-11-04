@@ -1,4 +1,4 @@
-const { Schema } = require("mongoose");
+const { Schema, model } = require("mongoose");
 
 const orderSchema = {
   purchaseDate: {
@@ -17,4 +17,6 @@ const schema = new Schema(orderSchema, {
   _id: false,
 });
 
-module.exports = schema;
+const Order = model("Order", schema);
+
+module.exports = Order;
