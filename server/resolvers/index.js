@@ -1,18 +1,18 @@
 //will contain references to all resolvers
 const { login, addUser } = require("./login");
-const { updateUser, getUser } = require("./users");
-const { getProduct, getProducts, updateProduct } = require("./products");
-const { getCategories } = require("./categories");
-const { getOrder, checkout } = require("./orders");
+const { updateUser, user } = require("./users");
+const { product, products, updateProduct } = require("./products");
+const { categories } = require("./categories");
+const { order, checkout } = require("./orders");
 
 const resolvers = {
   Query: {
     checkout,
-    getUser,
-    getProduct,
-    getProducts,
-    getCategories,
-    getOrder,
+    user,
+    product,
+    products,
+    categories,
+    order,
   },
   Mutation: {
     login,

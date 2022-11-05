@@ -9,7 +9,7 @@ const updateUser = async (parent, args, context) => {
   throw new AuthenticationError("Not logged in");
 };
 
-const getUser = async (parent, args, context) => {
+const user = async (parent, args, context) => {
   if (context.user) {
     const user = await User.findById(context.user._id).populate({
       path: "orders.products",
@@ -26,5 +26,5 @@ const getUser = async (parent, args, context) => {
 
 module.exports = {
   updateUser,
-  getUser,
+  user,
 };

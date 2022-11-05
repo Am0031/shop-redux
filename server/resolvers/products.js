@@ -1,6 +1,6 @@
 const { Product } = require("../models");
 
-const getProducts = async (parent, { category, name }) => {
+const products = async (parent, { category, name }) => {
   const params = {};
 
   if (category) {
@@ -16,7 +16,7 @@ const getProducts = async (parent, { category, name }) => {
   return await Product.find(params).populate("category");
 };
 
-const getProduct = async (parent, { _id }) => {
+const product = async (parent, { _id }) => {
   return await Product.findById(_id).populate("category");
 };
 
@@ -30,4 +30,4 @@ const updateProduct = async (parent, { _id, quantity }) => {
   );
 };
 
-module.exports = { getProduct, getProducts, updateProduct };
+module.exports = { product, products, updateProduct };

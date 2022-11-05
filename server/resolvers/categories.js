@@ -1,7 +1,7 @@
 const { Category } = require("../models");
 
-const getCategories = async () => {
+const categories = async () => {
   return await Category.find();
 };
 
-module.exports = { getCategories };
+module.exports = { categories };

@@ -2,7 +2,7 @@ const { AuthenticationError } = require("apollo-server-express");
 const { User, Order } = require("../models");
 const stripe = require("stripe")("sk_test_4eC39HqLyjWDarjtT1zdp7dc");
 
-const getOrder = async (parent, { _id }, context) => {
+const order = async (parent, { _id }, context) => {
   if (context.user) {
     const user = await User.findById(context.user._id).populate({
       path: "orders.products",
@@ -52,4 +52,4 @@ const checkout = async (parent, args, context) => {
   return { session: session.id };
 };
 
-module.exports = { getOrder, checkout };
+module.exports = { order, checkout };
