@@ -1,4 +1,4 @@
-const connectToDatabase = require("../config/connection");
+const connection = require("../config/connection");
 const { User, Product, Category } = require("../models");
 const { seedCategories } = require("./seedCategories");
 const { seedProducts } = require("./seedProducts");
@@ -10,10 +10,8 @@ const clearCollections = async () => {
   await User.deleteMany();
 };
 
-const init = async () => {
+const seedDb = async () => {
   try {
-    await connectToDatabase();
-
     // clear all collections
     await clearCollections();
 
@@ -28,8 +26,9 @@ const init = async () => {
   } catch (error) {
     console.log(`[ERROR]: Failed to seed DB | ${error.message}`);
   }
-
-  process.exit(0);
 };
 
-init();
+connection.once("open", async () => {
+  await seedDb;
+  process.exit(0);
+});

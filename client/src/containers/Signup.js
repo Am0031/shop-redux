@@ -9,6 +9,7 @@ const Signup = (props) => {
   const [addUser] = useMutation(ADD_USER);
 
   const handleFormSubmit = async (event) => {
+    debugger;
     event.preventDefault();
     const mutationResponse = await addUser({
       variables: {
