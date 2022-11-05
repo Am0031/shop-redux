@@ -10,7 +10,7 @@ const login = async (parent, { email, password }) => {
       throw new AuthenticationError("Incorrect credentials");
     }
 
-    const correctPw = await user.checkPassword(password);
+    const correctPw = await user.isCorrectPassword(password);
 
     if (!correctPw) {
       throw new AuthenticationError("Incorrect credentials");
@@ -18,7 +18,7 @@ const login = async (parent, { email, password }) => {
 
     const token = signToken(user);
 
-    return { success: true, token, user };
+    return { token, user };
   } catch (error) {
     console.log(`[ERROR]: Failed to login | ${error.message}`);
 
@@ -26,4 +26,11 @@ const login = async (parent, { email, password }) => {
   }
 };
 
-module.exports = login;
+const addUser = async (parent, args) => {
+  const user = await User.create(args);
+  const token = signToken(user);
+
+  return { token, user };
+};
+
+module.exports = { login, addUser };

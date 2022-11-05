@@ -40,10 +40,15 @@ schema.pre("save", async function (next) {
 });
 
 // compare the incoming password with the hashed password
-schema.method("checkPassword", async function (password) {
-  const isValid = await bcrypt.compare(password, this.password);
-  return isValid;
-});
+// schema.method("checkPassword", async function (password) {
+//   const isValid = await bcrypt.compare(password, this.password);
+//   return isValid;
+// });
+
+// compare the incoming password with the hashed password
+schema.methods.isCorrectPassword = async function (password) {
+  return await bcrypt.compare(password, this.password);
+};
 
 const User = model("User", schema);
 
