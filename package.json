@@ -10,18 +10,10 @@
     "seed": "cd server && npm run seed",
     "build": "cd client && npm run build"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Am0031/shop-redux.git"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Am0031/shop-redux/issues"
-  },
   "devDependencies": {
     "concurrently": "^5.1.0"
-  },
-  "homepage": "https://github.com/Am0031/shop-redux#readme"
+  }
 }
