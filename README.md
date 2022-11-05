@@ -174,7 +174,7 @@ To open the client's react app, open a second integrated terminal at client leve
 npm run start
 ```
 
-This will display a confirmation message in the terminal, and your react app is now running on port 3000 and will open in your browser and bring you to the home page.
+This will display a confirmation message in the terminal, and your react app is now running on port 3000 and will open in your browser and bring you to the home page of your app.
 
 Make sure to keep both terminals open for the app to work.
 
@@ -185,3 +185,7 @@ The app is not fully functional. There are still features to build and bugs to a
 - The checkout feature doesn't work at this stage. It is still WIP and needs integration with stripe.
 - On the home page, there is no "All" button which would allow to clear the category filter. This needs to be added.
 - On load of the page, the cart gets built showing each item in it twice. This needs to be resolved.
+
+## Contact me
+
+If you have any questions about this application, feel free to get in touch by sending me an [email](mailto:amelie.pira@gmail.com).
