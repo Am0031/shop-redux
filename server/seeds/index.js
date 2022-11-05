@@ -10,25 +10,19 @@ const clearCollections = async () => {
   await User.deleteMany();
 };
 
-const seedDb = async () => {
-  try {
-    // clear all collections
-    await clearCollections();
-
-    //create categories
-    await seedCategories();
-
-    //create products
-    await seedProducts();
-
-    //create users
-    await seedUsers();
-  } catch (error) {
-    console.log(`[ERROR]: Failed to seed DB | ${error.message}`);
-  }
-};
-
 connection.once("open", async () => {
-  await seedDb;
+  // clear all collections
+  await clearCollections();
+
+  //create categories
+  await seedCategories();
+
+  //create products
+  await seedProducts();
+
+  //create users
+  await seedUsers();
+
+  //end process
   process.exit(0);
 });
