@@ -101,31 +101,31 @@ The MongoDB collections of documents are built as follow:
 
 ### Client side packages
 
-"@apollo/client": "^3.7.1",
-"@reduxjs/toolkit": "^1.8.6",
-"@stripe/stripe-js": "^1.42.1",
-"@testing-library/jest-dom": "^5.16.5",
-"@testing-library/react": "^13.4.0",
-"@testing-library/user-event": "^13.5.0",
-"graphql": "^16.6.0",
-"jwt-decode": "^3.1.2",
-"react": "^18.2.0",
-"react-dom": "^18.2.0",
-"react-redux": "^8.0.4",
-"react-router-dom": "^6.4.3",
-"react-scripts": "5.0.1",
-"redux": "^4.2.0",
+- "@apollo/client": "^3.7.1",
+- "@reduxjs/toolkit": "^1.8.6",
+- "@stripe/stripe-js": "^1.42.1",
+- "@testing-library/jest-dom": "^5.16.5",
+- "@testing-library/react": "^13.4.0",
+- "@testing-library/user-event": "^13.5.0",
+- "graphql": "^16.6.0",
+- "jwt-decode": "^3.1.2",
+- "react": "^18.2.0",
+- "react-dom": "^18.2.0",
+- "react-redux": "^8.0.4",
+- "react-router-dom": "^6.4.3",
+- "react-scripts": "5.0.1",
+- "redux": "^4.2.0",
 
 ### Server side packages
 
-"apollo-server": "^3.11.1",
-"apollo-server-express": "^3.11.1",
-"bcrypt": "^5.1.0",
-"express": "^4.18.2",
-"graphql": "^16.6.0",
-"jsonwebtoken": "^8.5.1",
-"mongoose": "^6.7.1",
-"stripe": "^10.15.0"
+- "apollo-server": "^3.11.1",
+- "apollo-server-express": "^3.11.1",
+- "bcrypt": "^5.1.0",
+- "express": "^4.18.2",
+- "graphql": "^16.6.0",
+- "jsonwebtoken": "^8.5.1",
+- "mongoose": "^6.7.1",
+- "stripe": "^10.15.0"
 
 ## Installation
 
