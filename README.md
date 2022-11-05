@@ -1,5 +1,7 @@
 # Shop Redux App
 
+![MIT](https://img.shields.io/badge/License-MIT-blue)
+
 This is a simple shopping app built with react-redux to process the user's actions in the app.
 
 The repo contains both client and server folders.
@@ -19,7 +21,7 @@ The application is seeded on start, with 2 sets of credentials that can be used 
 
 ## Screenshots of the application
 
-For a logged out user:
+### For a logged out user
 
 <details>
 <summary>Desktop - Home page</summary>
@@ -63,7 +65,7 @@ For a logged out user:
 
 </details>
 
-For a logged in user:
+### For a logged in user
 
 <details>
 <summary>Desktop - Home page</summary>
@@ -97,7 +99,8 @@ The MongoDB collections of documents are built as follow:
 
 ## Technologies
 
-Client side:
+### Client side packages
+
 "@apollo/client": "^3.7.1",
 "@reduxjs/toolkit": "^1.8.6",
 "@stripe/stripe-js": "^1.42.1",
@@ -113,7 +116,8 @@ Client side:
 "react-scripts": "5.0.1",
 "redux": "^4.2.0",
 
-Server side:
+### Server side packages
+
 "apollo-server": "^3.11.1",
 "apollo-server-express": "^3.11.1",
 "bcrypt": "^5.1.0",
@@ -125,9 +129,9 @@ Server side:
 
 ## Installation
 
-To get this project installed, the following steps are required:
+To get this project installed and running, the following steps are required:
 
-Step 1 - Local Installation
+### Step 1 - Local Installation
 
 Clone the repository, using SSH keys:
 
@@ -154,9 +158,7 @@ Install all the required packages. This will install both client side and server
 npm install
 ```
 
-Once installed, to get this project running, the following steps must be followed:
-
-Step 2 - Start the application
+### Step 2 - Start the application
 
 The database set up and seeding is triggered as part of the start instruction for the server part.
 
