@@ -8,7 +8,7 @@ The repo contains both client and server folders.
 
 This simple shopping app offers the ability to browse products, add them to your cart, view your cart's items and total, view their order's history signup, login and checkout.
 
-On the client side, user actions are handled by the react-redux package, with a reducers.js file handling state updates.
+On the client side, user actions are handled by the react-redux package, with a [reducers.js](client/src/utils/reducers.js) file handling each case of state update.
 
 On the server side, users, products and categories are retrieved from the **shopredux** database. The cart is managed in the session and the order is saved and assigned to the logged in user when processed.
 
